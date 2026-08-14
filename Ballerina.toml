@@ -1,0 +1,26 @@
+[package]
+org = "hasangaranasinghe"
+name = "hello_world"
+version = "0.1.0"
+distribution = "2201.13.5"
+
+[build-options]
+observabilityIncluded = true
+
+[[tool.persist]]
+id = "hello_world.userDB"
+targetModule = "hello_world.userDB"
+filePath = "persist/userDBConnection/model.bal"
+options.datastore = "mysql"
+options.eagerLoading = true
+options.withInitParams = true
+
+[[dependency]]
+org = "ballerina"
+name = "tool.persist"
+version = "1.9.1"
+
+[[platform.java21.dependency]]
+groupId = "io.ballerina.stdlib"
+artifactId = "persist.sql-native"
+version = "1.7.2"
